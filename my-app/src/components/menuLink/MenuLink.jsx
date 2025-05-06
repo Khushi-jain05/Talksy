@@ -6,7 +6,7 @@ const MenuLink = ({ Icon, text }) => {
     <div className="menuLink">
       {Icon}
       <span className="menuLinkText">{text}</span>
-      <span className="menuLinkTextName">{text === "Logout" && "(Amber)"}</span>
+      <span className="menuLinkTextName">{text === "Logout" && "(Amit)"}</span>
     </div>
   );
 };

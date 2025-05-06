@@ -25,7 +25,7 @@ const EditProfile = () => {
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">Amber Logan</h4>
+              <h4 className="profileInfoName">Amit Jain</h4>
               <span className="profileInfoDesc">Hi Friends!</span>
             </div>
           </div>

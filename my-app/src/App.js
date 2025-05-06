@@ -15,12 +15,12 @@ function App() {
       <BrowserRouter >
         <Routes>
           <Route path="/">
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route index element={<Home />} />
-            <Route path="profile">
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route index element={<Home />} />
+        <Route path="profile">
               <Route path=":userId" element={<Profile />} />
-              <Route path=":userId/edit" element={<EditProfile />} />
+                  <Route path=":userId/edit" element={<EditProfile />} />
             </Route>
           </Route>
         </Routes>

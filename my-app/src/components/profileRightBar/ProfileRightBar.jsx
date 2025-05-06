@@ -15,21 +15,21 @@ const ProfileRightBar = () => {
       <div className="profileRightBarInfo">
         <div className="profileRightBarInfoItem">
           <span className="profileRightBarInfoKey">Email: </span>
-          <span className="profileRightBarInfoValue">amberlogan@gmail.com</span>
+          <span className="profileRightBarInfoValue">Amitjain@gmail.com</span>
         </div>
         <div className="profileRightBarInfoItem">
           <span className="profileRightBarInfoKey">Phone Number: </span>
-          <span className="profileRightBarInfoValue">+4 123 456 789</span>
+          <span className="profileRightBarInfoValue">+91648376437</span>
         </div>
         <div className="profileRightBarInfoItem">
           <span className="profileRightBarInfoKey">Address: </span>
           <span className="profileRightBarInfoValue">
-            Melwood Str. 72 Liverpool
+           Shanti Nagar
           </span>
         </div>
         <div className="profileRightBarInfoItem">
           <span className="profileRightBarInfoKey">Country: </span>
-          <span className="profileRightBarInfoValue">United Kingdom</span>
+          <span className="profileRightBarInfoValue">India</span>
         </div>
         <div className="profileRightBarInfoItem">
           <span className="profileRightBarInfoKey">Relationship: </span>
@@ -63,14 +63,14 @@ const ProfileRightBar = () => {
           />
           <span className="profileRightBarFollowingName">Beverly</span>
         </div>
-        <div className="profileRightBarFollowing">
-          <img
-            src="/assets/person/friend4.jpg"
-            alt=""
-            className="profileRightBarFollowingImg"
-          />
-          <span className="profileRightBarFollowingName">Glenna</span>
-        </div>
+    <div className="profileRightBarFollowing">
+      <img
+        src="/assets/person/friend4.jpg"
+        alt=""
+        className="profileRightBarFollowingImg"
+      />
+      <span className="profileRightBarFollowingName">Glenna</span>
+    </div>
         <div className="profileRightBarFollowing">
           <img
             src="/assets/person/friend5.jpg"
