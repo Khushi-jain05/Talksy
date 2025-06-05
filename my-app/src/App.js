@@ -7,6 +7,7 @@ import Profile from "./pages/profile/profile";
 import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
+import "./App.css";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);

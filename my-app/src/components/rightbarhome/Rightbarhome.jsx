@@ -5,7 +5,7 @@ import "./rightbarhome.scss";
 
 const Rightbarhome = () => {
   return (
-    <div className="rightbarhome">
+    <div className="rightbarhome ">
       <div className="birthdayContainer">
         <img
           src="/assets/birthdaygifts/gift.png"

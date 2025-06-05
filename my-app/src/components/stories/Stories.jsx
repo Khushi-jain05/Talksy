@@ -5,7 +5,7 @@ import "./stories.scss";
 
 const Stories = () => {
   return (
-    <div className="stories">
+    <div className="stories glass">
       <div className="storyCard">
         <div className="overlay"></div>
         <img src="/assets/person/user.jpg" alt="" className="storyProfile" />

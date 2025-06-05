@@ -1,1 +1,30 @@
 
+.glass {
+    background: linear-gradient(135deg, #2f1347, #98442a9e, #082247);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
+    
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  .glass1{
+    background: linear-gradient(135deg,#2f1347c6, #98442a6f, #08224771,#082247da );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
+    
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  body{
+    color:white
+
+  }
+  .glass2{
+    background: linear-gradient(120deg,  #98442a9e ,#2f1347, #082247cf,#082247);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
+    
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  

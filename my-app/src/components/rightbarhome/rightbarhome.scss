@@ -1,4 +1,7 @@
 .rightbarhome{
+margin-top: 80px;
+padding: 20px;
+
     .birthdayContainer{
         display: flex;
         align-items: center;
@@ -26,5 +29,8 @@
     .rightbarTitle{
         display: flex;
         margin-bottom: 20px;
+    }
+    .rightbarFriendList{
+color: white;
     }
 }

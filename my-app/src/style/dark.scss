@@ -3,16 +3,13 @@
     color: rgb(156,156,156);
 
     .navbarContainer{
-        background-color: #111111;
-        color: rgb(156,156,156);
-        border-bottom: 0.5px solid rgb(156,156,156);;
+        background-color: linear-gradient(135deg, #2f1347, #98442a9e, #082247);
+        color: rgb(255, 255, 255);
+        border-bottom: 0.5px solid rgb(156,156,156);
+       
 
-        .logo{
-            color: rgb(156,156,156);
-        }
-        .navbarLink{
-            color: rgb(156,156,156);
-        }
+        
+       
         .searchInput{
             color: #000000;
         }
@@ -22,39 +19,34 @@
         background-color: #111111;
         color: rgb(156,156,156);
 
-        .sidebarButton{
-            background-color: rgb(156,156,156);;
-            color: #000000;
-        }
+        
     }
 
-    .menuLink:hover{
-        background-color: rgba(98,97,97,0.3);
-    }
+    
 
     .sidebarFriendName{
-        color: rgb(156,156,156);
+        color: rgb(255, 254, 254);
     }
 
     .feed{
         background-color: #111111;
-        color: rgb(156,156,156);
+        color: rgb(255, 252, 252);
 
         .shareInput{
-            color: rgb(156,156,156);
+            color: rgb(255, 254, 254);
         }
     }
 
     .rightbar{
-        background-color: #111111;
+        background-color: #2e2d2d;
 
         .rightbarUsername{
-            color: rgb(156,156,156);
+            color: rgb(255, 252, 252);
         }
     }
 
     .editButton{
-        background-color: rgb(156,156,156);
+        background-color: rgb(255, 255, 255);
         color: #000000;
     }
 
@@ -63,7 +55,7 @@
             .right{
                 form{
                     input{
-                        color: rgb(156,156,156);
+                        color: rgb(255, 254, 254);
                     }
                     .updateButton{
                         background-color: rgb(156,156,156);

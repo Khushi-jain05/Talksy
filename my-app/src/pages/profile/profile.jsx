@@ -7,7 +7,7 @@ import Rightbar from "./../../components/rightbar/Rightbar";
 
 const Profile = () => {
   return (
-    <div className="profile">
+    <div className="profile glass">
       <Navbar />
       <div className="profileWrapper">
         <Sidebar />

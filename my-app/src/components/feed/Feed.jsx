@@ -7,7 +7,7 @@ import "./feed.scss";
 
 const Feed = () => {
   return (
-    <div className="feed">
+    <div className="feed glass1">
       <div className="feedWrapper">
     <Stories />
     <Share />

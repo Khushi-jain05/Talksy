@@ -5,14 +5,18 @@ import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { Link } from "react-router-dom";
 import "./navbar.scss";
+import logo from "../../Talksy-1.svg";
+
 
 
 const Navbar = () => {
   return (
+    <nav className="glass">
     <div className="navbarContainer">
         <div className="navbarLeft">
           <Link to="/" style={{ textDecoration: "none" }}>
-            <span className="logo">Talksy</span>
+          <img src={logo} alt="Talksy Logo" style={{ height: "400px",marginTop:"1vw" }} />
+            
           </Link>
         </div>
         <div className="navbarCenter">
@@ -26,10 +30,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbarRight">
-          <div className="navbarLinks">
-            <span className="navbarLink">Homepage</span>
-            <span className="navbarLink">Timeline</span>
-      </div>
+          
       <div className="navbarIcons">
         <div className="navbarIconItem">
           <PersonIcon />
@@ -49,6 +50,7 @@ const Navbar = () => {
   </Link>
         </div>
       </div>
+      </nav>
   );
 };
 

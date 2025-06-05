@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 const Post = ({ post }) => {
   console.log(post);
   return (
-    <div className="post">
+    <div className="post glass1">
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">

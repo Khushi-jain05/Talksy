@@ -2,23 +2,15 @@
     flex: 3;
     height: calc(100vh - 50px);
     position: sticky;
-    top: 50px;
+    top: 80px;
     overflow-y: scroll;
+    z-index: 999;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.495);
 
     .sidebarWrapper{
         padding: 20px;
 
-      .sidebarButton{
-        background-color: #011631;
-        color: white;
-        border-radius: 5px;
-        font-weight: 500;
-        padding: 10px;
-        margin: 20px;
-        width: 150px;
-        border: none;
-        cursor: pointer;
-      }
+      
 
       .sidebarHr{
         margin: 10px 0;
@@ -39,7 +31,7 @@
 }
 
 ::-webkit-scrollbar-track{
-    background-color: #f1f1f1;
+    background-color: linear-gradient(135deg,#4c2375b5, #98442a9e, #0822479a);
 }
 
 ::-webkit-scrollbar-thumb{

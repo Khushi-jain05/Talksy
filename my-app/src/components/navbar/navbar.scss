@@ -1,7 +1,7 @@
 .navbarContainer{
     width: 100%;
-    height: 50px;
-    background-color: #011631;
+    height: 10vh;
+    // background-color: #011631;
     display: flex;
     align-items: center;
     position: sticky;
@@ -23,8 +23,8 @@
         flex: 5;
 
         .searchBar{
-            width: 100%;
-            height: 30px;
+            width: 80%;
+            height: 3vw;
             background-color: white;
             border-radius: 30px;
             border: 1px solid white;
@@ -91,8 +91,8 @@
 
         .navbarImg{
             display: flex;
-            width: 32px;
-            height: 32px;
+            width:4vw;
+            height: 4vw;
             border-radius: 50%;
             border: 2px solid white;
             object-fit: cover;
@@ -103,7 +103,7 @@
 
 //Responsiveness
 
-@media only screen and (max-width: 992px){
+@media only screen and (max-width: 576px){
     .navbarContainer{
         .navbarLeft{
             flex: 2;
@@ -130,7 +130,7 @@
     }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 576px){
     .navbarContainer{
         .navbarLeft{
             flex: 3;
@@ -159,3 +159,11 @@
     }
    }
 }
+nav.glass {
+    // // padding: 12px 24px;
+    position: fixed;
+    width: 100%;
+    // top: 0;
+    z-index: 1000;
+    
+  }

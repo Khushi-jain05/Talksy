@@ -6,7 +6,7 @@ import "./editProfile.scss";
 
 const EditProfile = () => {
   return (
-    <div className="editProfile">
+    <div className="editProfile glass">
       <Navbar />
       <div className="editProfileWrapper">
         <Sidebar />

@@ -17,21 +17,21 @@ import { DarkModeContext } from "./../../context/darkModeContext";
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
   return (
-    <div className="sidebar">
+    <div className="sidebar glass">
       <div className="sidebarWrapper">
         <MenuLink Icon={<RssFeedIcon />} text="Feed" />
         <MenuLink Icon={<ChatIcon />} text="Chats" />
-        <MenuLink Icon={<VideocamIcon />} text="Videos" />
+        
         <MenuLink Icon={<GroupsIcon />} text="Friends" />
         <MenuLink Icon={<BookmarkIcon />} text="Bookmarks" />
-        <MenuLink Icon={<ShoppingCartIcon />} text="Marketplace" />
-        <MenuLink Icon={<EventIcon />} text="Events" />
+        
+       
         <span onClick={() => dispatch({ type: "TOGGLE" })}>
           <MenuLink Icon={<Brightness4Icon />} text="Theme" />
         </span>
         <MenuLink Icon={<ExitToAppOutlinedIcon />} text="Logout" />
 
-        <button className="sidebarButton">Show More</button>
+        
         <hr className="sidebarHr" />
 
         <ul className="sidebarFriendList">
