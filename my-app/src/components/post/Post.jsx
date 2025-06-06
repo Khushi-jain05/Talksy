@@ -46,7 +46,7 @@ const Post = ({ post }) => {
         <div className="postBottom">
           <div className="postBottomLeft">
             <Favorite className="bottomLeftIcon" style={{ color: "red" }} />
-            <ThumbUp className="bottomLeftIcon" style={{ color: "#011631" }} />
+            <ThumbUp className="bottomLeftIcon"  />
             <span className="postLikeCounter">{post.like}</span>
           </div>
           <div className="postBottomRight">

@@ -5,7 +5,7 @@ import ProfileRightBar from "./../profileRightBar/ProfileRightBar";
 
 const Rightbar = ({ profile }) => {
   return (
-    <div className="rightbar glass2">
+    <div className="rightbar glass2 ">
       <div className="rightbarWrapper">
         {profile ? <ProfileRightBar /> : <Rightbarhome />}
       </div>

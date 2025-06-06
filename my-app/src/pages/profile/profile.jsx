@@ -7,13 +7,13 @@ import Rightbar from "./../../components/rightbar/Rightbar";
 
 const Profile = () => {
   return (
-    <div className="profile glass">
+    <div className="profile">
       <Navbar />
       <div className="profileWrapper">
         <Sidebar />
-        <div className="profileRight">
+        <div className="profileRight ">
           <div className="profileRightTop">
-            <div className="profileCover">
+            <div className="profileCover ">
               <img
                 src="/assets/profileCover/profilecover.jpg"
                 alt=""
@@ -25,7 +25,7 @@ const Profile = () => {
                 className="profileUserImg"
               />
             </div>
-            <div className="profileInfo">
+            <div className="profileInfo ">
               <h4 className="profileInfoName">Amit jain</h4>
               <span className="profileInfoDesc">Hi Friends!</span>
             </div>
