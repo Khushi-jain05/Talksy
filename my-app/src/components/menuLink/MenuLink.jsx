@@ -4,7 +4,7 @@ import "./menuLink.scss";
 const MenuLink = ({ Icon, text }) => {
   return (
     <div className="menuLink">
-      {Icon}
+      <Icon/>
       <span className="menuLinkText">{text}</span>
       <span className="menuLinkTextName">{text === "Logout" && "(Amit)"}</span>
     </div>

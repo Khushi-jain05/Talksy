@@ -18,7 +18,7 @@ import {
         <div className="shareWrapper">
           <div className="shareTop">
             <img
-              src="/assets/person/user.jpg"
+              src="/assets/person/pic.jpeg"
               alt=""
               className="shareProfileImg"
             />

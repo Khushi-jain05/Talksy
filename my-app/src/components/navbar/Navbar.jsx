@@ -6,6 +6,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import { Link } from "react-router-dom";
 import "./navbar.scss";
 import logo from "../../Talksy-1.svg";
+// import ProfilePic from "../../assets/pic.jpeg";
 
 
 
@@ -46,7 +47,7 @@ const Navbar = () => {
         </div>
       </div>
   <Link to="/profile/userId">
-    <img src="/assets/person/user.jpg" alt="" className="navbarImg" />
+    <img src="/assets/person/pic.jpeg" alt="" className="navbarImg" />
   </Link>
         </div>
       </div>

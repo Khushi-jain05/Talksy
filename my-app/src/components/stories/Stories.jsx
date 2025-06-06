@@ -8,8 +8,8 @@ const Stories = () => {
     <div className="stories glass">
       <div className="storyCard">
         <div className="overlay"></div>
-        <img src="/assets/person/user.jpg" alt="" className="storyProfile" />
-        <img src="/assets/person/user.jpg" alt="" className="storybackground" />
+        <img src="/assets/person/pic.jpeg" alt="" className="storyProfile" />
+        <img src="/assets/person/pic.jpeg" alt="" className="storybackground" />
         <img src="/assets/person/upload.png" alt="" className="storyadd" />
         <span className="text">Amber</span>
       </div>

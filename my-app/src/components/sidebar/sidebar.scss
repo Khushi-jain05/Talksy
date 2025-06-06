@@ -3,7 +3,7 @@
     height: calc(100vh - 50px);
     position: sticky;
     top: 80px;
-    // overflow-y: scroll;
+    overflow-y: scroll;
     z-index: 999;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.495);
 
@@ -11,7 +11,7 @@
         padding: 20px;
 
       
-
+      
       .sidebarHr{
         margin: 10px 0;
       }
@@ -35,7 +35,8 @@
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: gray;
+    background-color:linear-gradient(135deg,#4c2375b5, #98442a9e, #0822479a);
+   
 }
 
 //Responsiveness
