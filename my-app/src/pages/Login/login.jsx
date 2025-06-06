@@ -9,7 +9,7 @@ const Login = () => {
         <div className="loginLeft">
           <h3 className="loginLogo">Talksy</h3>
           <span className="loginDesc">
-            Connect with friends and the world around you 
+            Connect with friends and the world around you on Talksy.
           </span>
         </div>
         <div className="loginRight">

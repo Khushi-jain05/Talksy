@@ -46,26 +46,32 @@
         .editprofileRightBottom{
             display: flex;
             flex-direction: column;
+            
 
             .top{
                 -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47);
-                box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+                box-shadow: 2px 4px 10px 1px rgba(16, 16, 16, 0.47);
                 margin: 20px;
                 padding: 10px;
                 display: flex;
+                border-radius: 10px;
+                justify-content: center;
 
                 h1{
-                    color: #666;
-                    font-size: 20px;
+                    color: white;
+                    font-size: 24px;
+                   
                 }
             }
 
             .bottom{
                 -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47);
-                box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+                box-shadow: 2px 4px 10px 1px rgba(16, 16, 16, 0.47);
+                border-radius: 10px;
                 margin: 20px;
                 padding: 10px;
                 display: flex;
+                
 
                 .left{
                     flex: 1;
@@ -105,7 +111,7 @@
                                 padding: 5px;
                                 border: none;
                                 background-color: transparent;
-                                border-bottom: 1px solid gray;
+                                border-bottom: 1px solid rgb(255, 255, 255);
 
                                 &:focus{
                                     outline: none;
@@ -116,12 +122,15 @@
                         .updateButton{
                             width: 150px;
                             padding: 10px;
-                            background-color: #011631;
+                           background: linear-gradient(135deg,#2f1347c6, #98442a6f, #08224771,#082247da );
                             color: white;
                             border: none;
                             font-weight: bold;
                             margin-top: 20px;
                             cursor: pointer;
+                            border-radius: 15px;
+                            font-size: 17px;
+                           
                         }
                     }
                 }

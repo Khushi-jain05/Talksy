@@ -10,7 +10,7 @@ const EditProfile = () => {
       <Navbar />
       <div className="editProfileWrapper">
         <Sidebar />
-        <div className="profileRight">
+        <div className="profileRight glass">
           <div className="profileRightTop">
             <div className="profileCover">
               <img
@@ -19,7 +19,7 @@ const EditProfile = () => {
                 className="profileCoverImg"
               />
               <img
-                src="/assets/person/user.jpg"
+                src="/assets/person/pic.jpeg"
                 alt=""
                 className="profileUserImg"
               />
@@ -35,7 +35,7 @@ const EditProfile = () => {
             </div>
             <div className="bottom">
               <div className="left">
-                <img src="/assets/profileCover/DefaultProfile.jpg" alt="" />
+                <img src="/assets/ads/default.jpeg" alt="" />
               </div>
               <div className="right">
                 <form>

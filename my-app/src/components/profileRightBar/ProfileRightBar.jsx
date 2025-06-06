@@ -15,7 +15,7 @@ const ProfileRightBar = () => {
       <div className="profileRightBarInfo">
         <div className="profileRightBarInfoItem">
           <span className="profileRightBarInfoKey">Email: </span>
-          <span className="profileRightBarInfoValue">Amitjain@gmail.com</span>
+          <span className="profileRightBarInfoValue">CrisKapoor@gmail.com</span>
         </div>
         <div className="profileRightBarInfoItem">
           <span className="profileRightBarInfoKey">Phone Number: </span>
@@ -41,7 +41,7 @@ const ProfileRightBar = () => {
       <div className="profileRightBarFollowings">
         <div className="profileRightBarFollowing">
           <img
-            src="/assets/person/friend1.jpg"
+            src="/assets/person/pp1.jpeg"
             alt=""
             className="profileRightBarFollowingImg"
           />
@@ -49,7 +49,7 @@ const ProfileRightBar = () => {
         </div>
         <div className="profileRightBarFollowing">
           <img
-            src="/assets/person/friend2.jpg"
+            src="/assets/person/pp2.jpeg"
             alt=""
             className="profileRightBarFollowingImg"
           />
@@ -57,7 +57,7 @@ const ProfileRightBar = () => {
         </div>
         <div className="profileRightBarFollowing">
           <img
-            src="/assets/person/friend3.jpg"
+            src="/assets/person/pp3.jpeg"
             alt=""
             className="profileRightBarFollowingImg"
           />
@@ -65,7 +65,7 @@ const ProfileRightBar = () => {
         </div>
     <div className="profileRightBarFollowing">
       <img
-        src="/assets/person/friend4.jpg"
+        src="/assets/person/pp4.jpeg"
         alt=""
         className="profileRightBarFollowingImg"
       />
@@ -73,7 +73,7 @@ const ProfileRightBar = () => {
     </div>
         <div className="profileRightBarFollowing">
           <img
-            src="/assets/person/friend5.jpg"
+            src="/assets/person/pp5.jpeg"
             alt=""
             className="profileRightBarFollowingImg"
           />
@@ -81,7 +81,7 @@ const ProfileRightBar = () => {
         </div>
         <div className="profileRightBarFollowing">
           <img
-            src="/assets/person/friend6.jpg"
+            src="/assets/person/pp6.jpeg"
             alt=""
             className="profileRightBarFollowingImg"
           />
