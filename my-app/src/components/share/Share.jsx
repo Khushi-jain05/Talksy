@@ -6,11 +6,25 @@ import {
   } from "@mui/icons-material";
   import React, { useState } from "react";
   import "./share.scss";
+  // import Picker from "@emoji-mart/react";
+  import data from "@emoji-mart/data";
+import EmojiPicker from "@emoji-mart/react";
+  
+ 
 // import { AuthContext } from "../../context/AuthContext";
   
   const Share = () => {
     // const {currentUser} = useContext(AuthContext);
+  const [input, setInput] = useState("");
+
     const [file, setFile] = useState(null);
+    const [showEmojis, setShowEmojis] = useState(false);
+      const addEmoji = (e) => {
+    let sym = e.unified.split("-");
+    let codesArray = sym.map((el) => "0x" + el);
+    let emoji = String.fromCodePoint(...codesArray);
+    setInput((prev) => prev + emoji);
+  };
   
     const removeImage = () => {
       setFile(null);
@@ -31,6 +45,10 @@ import {
               style={{overflow: "hidden",resize: "none"}}
               placeholder="What's on your mind Cris ?"
               className="shareInput"
+              value={input}
+//             
+            onChange={(e) => setInput(e.target.value)}
+            
             />
           </div>
           <hr className="shareHr" />
@@ -60,7 +78,7 @@ import {
                   onChange={(e) => setFile(e.target.files[0])}
                 />
               </label>
-              <div className="shareOption">
+              <div  onClick={()=>setShowEmojis(!showEmojis)} className="shareOption">
                 <EmojiEmotions
                   className="shareIcon"
                   style={{ color: "#bfc600ec" }}
@@ -69,6 +87,12 @@ import {
               </div>
             </div>
           </div>
+          {showEmojis && (
+          <div className="emoji">
+            <EmojiPicker data={data} onEmojiSelect={addEmoji} />
+
+          </div>
+        )}
         </div>
       </div>
     );
