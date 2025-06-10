@@ -11,7 +11,7 @@ const Stories = () => {
         <img src="/assets/person/pic.jpeg" alt="" className="storyProfile" />
         <img src="/assets/person/pic.jpeg" alt="" className="storybackground" />
         <img src="/assets/person/upload.png" alt="" className="storyadd" />
-        <span className="text">Amber</span>
+        <span className="text">Cris</span>
       </div>
 
       {Users.map((u) => (

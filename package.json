@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@emoji-mart/react": "^1.1.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^7.0.2",
@@ -7,7 +8,8 @@
     "@supabase/supabase-js": "^2.50.0",
     "firebase": "^11.9.0",
     "react-router-dom": "^7.5.3",
-    "sass": "^1.87.0"
+    "sass": "^1.87.0",
+    "uuid": "^11.1.0"
   },
   "resolutions": {
     "react": "^18.2.0",

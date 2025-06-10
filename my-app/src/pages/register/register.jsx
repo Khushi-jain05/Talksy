@@ -28,7 +28,7 @@ const Register = () => {
     
       if (signUpError) throw signUpError;
     
-      // Get the user again to ensure it's the latest authenticated one
+      
       const { data: { user } } = await supabase.auth.getUser();
       let photoURL = null;
     
@@ -37,13 +37,13 @@ const Register = () => {
         const filePath = `usersImages/${displayName}.${fileExt}`;
     
         const { error: uploadError } = await supabase.storage
-          .from("images")
+          .from("posts")
           .upload(filePath, img);
     
         if (uploadError) throw uploadError;
     
         const { data: publicURLData } = supabase.storage
-          .from("images")
+          .from("posts")
           .getPublicUrl(filePath);
     
         photoURL = publicURLData.publicUrl;
