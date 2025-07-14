@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home/home";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/register";
@@ -8,23 +8,45 @@ import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import "./App.css";
-import "./index.css"
+import "./index.css";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
+
   return (
     <div className={darkMode ? "app dark" : "app"}>
-      <BrowserRouter >
+      <BrowserRouter>
         <Routes>
-          <Route path="/">
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-        <Route index element={<Home />} />
-        <Route path="profile">
-              <Route path=":userId" element={<Profile />} />
-                  <Route path=":userId/edit" element={<EditProfile />} />
-            </Route>
-          </Route>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+          
+          <Route
+            path="/home"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile/:userId"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile/:userId/edit"
+            element={
+              <ProtectedRoute>
+                <EditProfile />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

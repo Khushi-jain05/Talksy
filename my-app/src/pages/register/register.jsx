@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { createClient } from "@supabase/supabase-js";
+
 import "./register.scss";
 import { DriveFolderUploadOutlined } from "@mui/icons-material";
 import { Link, useNavigate } from "react-router-dom";
+import registerImg from '../../register.jpeg';
+import { supabase } from "../../supabaseClient";
 
-const supabase = createClient(
-  "https://icvklrslgbchqtayrowh.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljdmtscnNsZ2JjaHF0YXlyb3doIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkyOTI5MzMsImV4cCI6MjA2NDg2ODkzM30.PR-3rz92Rk51ggyMwBdiBj9r3jgqpHUo1Y0TWPvqU9A"
-);
+
+
 
 const Register = () => {
   const [img, setImg] = useState(null);
@@ -16,62 +16,75 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    const displayName = e.target[0].value;
-    const email = e.target[1].value;
-    const password = e.target[2].value;
+  const displayName = e.target[0].value;
+  const email = e.target[1].value;
+  const password = e.target[2].value;
 
-    try {
-      const {error: signUpError } = await supabase.auth.signUp({
-        email,
-        password,
-      });
+  try {
+   
+    const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+
+    if (signUpError) throw signUpError;
+
+    let user = signUpData.user;
+    if (!user) {
+  const sessionResponse = await supabase.auth.getSession();
+  user = sessionResponse.data?.session?.user;
+}
+
+if (!user) throw new Error("User not returned. Is email confirmation still enabled?");
+
+
+    let photoURL = null;
+
     
-      if (signUpError) throw signUpError;
-    
-      
-      const { data: { user } } = await supabase.auth.getUser();
-      let photoURL = null;
-    
-      if (img) {
-        const fileExt = img.name.split('.').pop();
-        const filePath = `usersImages/${displayName}.${fileExt}`;
-    
-        const { error: uploadError } = await supabase.storage
-          .from("posts")
-          .upload(filePath, img);
-    
-        if (uploadError) throw uploadError;
-    
-        const { data: publicURLData } = supabase.storage
-          .from("posts")
-          .getPublicUrl(filePath);
-    
-        photoURL = publicURLData.publicUrl;
-      }
-    
-      const { error: insertError } = await supabase.from("users").insert({
-        uid: user.id,
-        displayName,
-        email,
-        photoURL,
-      });
-    
-      if (insertError) throw insertError;
-    
-      await supabase.from("usersPosts").insert({ uid: user.id, messages: [] });
-    
-      navigate("/login");
-    } catch (err) {
-      console.error(err);
-      setError(true);
+    if (img) {
+      const fileExt = img.name.split('.').pop();
+      const filePath = `usersImages/${displayName}.${fileExt}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from("posts")
+        .upload(filePath, img);
+
+      if (uploadError) throw uploadError;
+
+      const { data: publicURLData } = supabase.storage
+        .from("posts")
+        .getPublicUrl(filePath);
+
+      photoURL = publicURLData.publicUrl;
     }
-    
-  };
 
+    
+    const { error: insertError } = await supabase.from("users").insert({
+      uid: user.id,
+      displayName,
+      email,
+      photoURL,
+    });
+
+    if (insertError) throw insertError;
+
+   
+    await supabase.from("usersPosts").insert({ uid: user.id, messages: [] });
+
+    
+    navigate("/");
+  } catch (err) {
+    console.error("❌ Registration failed:", err);
+    setError(err.message || err.description || "Something went wrong");
+  }
+};
+  
   return (
-    <div className="register">
+    <div className="register ">
+    
       <div className="registerWrapper">
         <div className="registerLeft">
+          <h1>Welcome!</h1>
           <h3 className="registerLogo">Talksy</h3>
           <span className="registerDesc">
             Connect with friends and the world around you on Talksy.
@@ -84,7 +97,7 @@ const Register = () => {
                 src={
                   img
                     ? URL.createObjectURL(img)
-                    : "/assets/profileCover/DefaultProfile.jpg"
+                    : "/assets/person/pic.jpeg"
                 }
                 alt=""
                 className="profileImg"
@@ -135,8 +148,11 @@ const Register = () => {
                     Log into Account
                   </button>
                 </Link>
-                {error && <span>Something went wrong</span>}
+                {error && <span style={{ color: "red", fontSize: "14px" }}>{error}</span>}
               </form>
+              <div className="loginImageWrapper">
+      <img src={registerImg} alt="register" className="registerImage" />
+    </div>
             </div>
           </div>
         </div>

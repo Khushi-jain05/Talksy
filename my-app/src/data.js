@@ -260,3 +260,9 @@ export const Users = [
       comment: "7",
     },
   ];
+  const updatedPosts = Posts.map(post => ({
+    ...post,
+    photo: `http://localhost:3000${post.photo}`,
+  }));
+  
+  console.log(updatedPosts);
