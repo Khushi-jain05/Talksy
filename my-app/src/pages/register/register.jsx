@@ -60,8 +60,8 @@ if (!user) throw new Error("User not returned. Is email confirmation still enabl
 
     
     const { error: insertError } = await supabase.from("users").insert({
-      uid: user.id,
-      displayName,
+      id: user.id,
+      name: displayName,
       email,
       photoURL,
     });

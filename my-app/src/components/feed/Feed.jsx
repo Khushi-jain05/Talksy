@@ -20,3 +20,42 @@ const Feed = () => {
 };
 
 export default Feed;
+// import React, { useEffect, useState } from "react";
+// import { supabase } from "../../supabaseClient";
+// import Post from "../post/Post";
+// import Share from "../share/Share";
+// import "./feed.scss";
+
+// const Feed = () => {
+//   const [posts, setPosts] = useState([]);
+
+//   useEffect(() => {
+//     fetchPosts();
+//   }, []);
+
+//   const fetchPosts = async () => {
+//     const { data, error } = await supabase
+//       .from("posts")
+//       .select("*")
+//       .order("created_at", { ascending: false });
+
+//     if (error) {
+//       console.error("Error fetching posts:", error);
+//     } else {
+//       setPosts(data);
+//     }
+//   };
+
+//   return (
+//     <div className="feed glass1">
+//       <div className="feedWrapper">
+//         <Share />
+//         {posts.map((p) => (
+//           <Post key={p.id} post={p} />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Feed;
