@@ -80,7 +80,7 @@ const EditProfile = () => {
     if (error) {
       console.error("Error updating profile:", error);
     } else {
-      navigate("/profile/userId", { state: { updated: true } });
+      navigate(`/profile/${userId}`, { state: { updated: true } });
     }
   };
 

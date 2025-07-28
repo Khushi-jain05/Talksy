@@ -30,9 +30,21 @@ const Register = () => {
     if (signUpError) throw signUpError;
 
     let user = signUpData.user;
-    if (!user) {
-  const sessionResponse = await supabase.auth.getSession();
-  user = sessionResponse.data?.session?.user;
+
+// Wait until user session is fully available
+if (!user || !user.id) {
+  const {
+    data: { session },
+    error: sessionError,
+  } = await supabase.auth.getSession();
+
+  if (sessionError) throw sessionError;
+  user = session?.user;
+}
+
+// Final safety check
+if (!user || !user.id) {
+  throw new Error("User session not available. Please check email confirmation settings.");
 }
 
 if (!user) throw new Error("User not returned. Is email confirmation still enabled?");
