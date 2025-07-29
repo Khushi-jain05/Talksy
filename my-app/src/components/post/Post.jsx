@@ -1,6 +1,6 @@
 import React from "react";
 import "./post.scss";
-import { Users } from "./../../data";
+import { Users } from "../../data";
 import { IconButton } from "@mui/material";
 import {
   ChatBubbleOutline,

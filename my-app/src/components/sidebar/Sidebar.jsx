@@ -57,7 +57,7 @@ import "./sidebar.scss";
 import MenuLink from "../menuLink/MenuLink";
 import Friends from "../friends/Friends";
 import { Users } from "../../data";
-import { DarkModeContext } from "./../../context/darkModeContext";
+import { DarkModeContext } from "../../context/darkModeContext";
 import { supabase } from "../../supabaseClient";
 
 const Sidebar = () => {
