@@ -2,8 +2,8 @@ import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import "./profile.scss";
-import Feed from "./../../components/feed/Feed";
-import Rightbar from "./../../components/rightbar/Rightbar";
+import Feed from "../../components/feed/Feed";
+import Rightbar from "../../components/rightbar/Rightbar";
 import { useEffect, useState } from "react";
 import { supabase } from "../../supabaseClient";
 

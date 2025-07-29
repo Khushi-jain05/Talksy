@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Home from "./pages/Home/home";
-import Login from "../src/pages/login/Login"
-import Register from "./pages/register/register";
+import Home from "./pages/Homepage/Home"
+import Login from "./pages/Loginpage/Login"
+import Register from "./pages/Registerpage/Register";
 import EditProfile from "./pages/editProfile/EditProfile";
-import Profile from "./pages/profile/profile";
+import Profile from "./pages/Profilepage/Profile";
 import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
