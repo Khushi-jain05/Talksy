@@ -1,99 +1,71 @@
 import React, { useState } from "react";
-
 import "./register.scss";
 import { DriveFolderUploadOutlined } from "@mui/icons-material";
 import { Link, useNavigate } from "react-router-dom";
 import registerImg from '../../register.jpeg';
 import { supabase } from "../../supabaseClient";
 
-
-
-
 const Register = () => {
   const [img, setImg] = useState(null);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
-  const displayName = e.target[0].value;
-  const email = e.target[1].value;
-  const password = e.target[2].value;
+    setLoading(true);
+    setError(false);
 
-  try {
-   
-    const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
-      email,
-      password,
-    });
+    const displayName = e.target[0].value;
+    const email = e.target[1].value;
+    const password = e.target[2].value;
 
-    if (signUpError) throw signUpError;
+    try {
+      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+        email,
+        password,
+      });
 
-    let user = signUpData.user;
+      if (signUpError) throw signUpError;
 
-// Wait until user session is fully available
-if (!user || !user.id) {
-  const {
-    data: { session },
-    error: sessionError,
-  } = await supabase.auth.getSession();
+      let user = signUpData.user;
 
-  if (sessionError) throw sessionError;
-  user = session?.user;
-}
+      if (!user) {
+        const {
+          data: { session },
+          error: sessionError,
+        } = await supabase.auth.getSession();
 
-// Final safety check
-if (!user || !user.id) {
-  throw new Error("User session not available. Please check email confirmation settings.");
-}
+        if (sessionError || !session?.user) {
+          throw new Error("User session not available. Please verify email.");
+        }
 
-if (!user) throw new Error("User not returned. Is email confirmation still enabled?");
+        user = session.user;
+      }
 
+      // Insert user info into "users" table
+      const { error: insertError } = await supabase.from("users").insert({
+        id: user.id,
+        name: displayName,
+        email,
+      });
 
-    let photoURL = null;
+      if (insertError) throw insertError;
 
-    
-    if (img) {
-      const fileExt = img.name.split('.').pop();
-      const filePath = `usersImages/${displayName}.${fileExt}`;
+      // Create an empty entry in "usersPosts"
+      await supabase.from("usersPosts").insert({ uid: user.id, messages: [] });
 
-      const { error: uploadError } = await supabase.storage
-        .from("posts")
-        .upload(filePath, img);
-
-      if (uploadError) throw uploadError;
-
-      const { data: publicURLData } = supabase.storage
-        .from("posts")
-        .getPublicUrl(filePath);
-
-      photoURL = publicURLData.publicUrl;
+      navigate("/");
+    } catch (err) {
+      console.error("❌ Registration failed:", err);
+      setError(err.message || "Something went wrong");
+    } finally {
+      setLoading(false);
     }
+  };
 
-    
-    const { error: insertError } = await supabase.from("users").insert({
-      id: user.id,
-      name: displayName,
-      email,
-      photoURL,
-    });
-
-    if (insertError) throw insertError;
-
-   
-    await supabase.from("usersPosts").insert({ uid: user.id, messages: [] });
-
-    
-    navigate("/");
-  } catch (err) {
-    console.error("❌ Registration failed:", err);
-    setError(err.message || err.description || "Something went wrong");
-  }
-};
-  
   return (
-    <div className="register ">
-    
+    <div className="register">
       <div className="registerWrapper">
         <div className="registerLeft">
           <h1>Welcome!</h1>
@@ -152,8 +124,8 @@ if (!user) throw new Error("User not returned. Is email confirmation still enabl
                   minLength={6}
                   required
                 />
-                <button type="submit" className="registerButton">
-                  Sign Up
+                <button type="submit" className="registerButton" disabled={loading}>
+                  {loading ? "Registering..." : "Sign Up"}
                 </button>
                 <Link to="/login">
                   <button className="loginRegisterButton">
@@ -163,8 +135,8 @@ if (!user) throw new Error("User not returned. Is email confirmation still enabl
                 {error && <span style={{ color: "red", fontSize: "14px" }}>{error}</span>}
               </form>
               <div className="loginImageWrapper">
-      <img src={registerImg} alt="register" className="registerImage" />
-    </div>
+                <img src={registerImg} alt="register" className="registerImage" />
+              </div>
             </div>
           </div>
         </div>
