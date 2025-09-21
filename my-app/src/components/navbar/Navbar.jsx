@@ -2,7 +2,7 @@ import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
-import NotificationsIcon from "@mui/icons-material/Notifications";
+// import NotificationsIcon from "@mui/icons-material/Notifications";
 import { Link } from "react-router-dom";
 import "./navbar.scss";
 import logo from "../../Talksy-1.svg";
@@ -33,18 +33,20 @@ const Navbar = () => {
         <div className="navbarRight">
           
       <div className="navbarIcons">
+        <Link to="/profile/userId" style={{ color: "inherit" }}>
         <div className="navbarIconItem">
           <PersonIcon />
-          <span className="navbarIconBadge">2</span>
-        </div>
+          
+        </div></Link>
+        <Link to="/chat" style={{ color: "inherit" }}>
         <div className="navbarIconItem">
           <ChatBubbleIcon />
           <span className="navbarIconBadge">10</span>
-        </div>
-        <div className="navbarIconItem">
+        </div></Link>
+        {/* <div className="navbarIconItem">
           <NotificationsIcon />
           <span className="navbarIconBadge">8</span>
-        </div>
+        </div> */}
       </div>
   <Link to="/profile/userId">
     <img src="/assets/person/pic.jpeg" alt="" className="navbarImg" />
